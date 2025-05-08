@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Shopping List Task"
 include(":app")
- 
+include(":shopping-list-module")
