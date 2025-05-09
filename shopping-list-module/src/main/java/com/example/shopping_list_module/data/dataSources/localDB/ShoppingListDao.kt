@@ -6,13 +6,12 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
 import com.example.shopping_list_module.data.models.ShoppingItemDto
-import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface ShoppingListDao
 {
     @Query("SELECT * FROM shopping_items")
-    fun getItems(): Flow<List<ShoppingItemDto>>
+    fun getItems(): List<ShoppingItemDto>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertItem(item: ShoppingItemDto)
