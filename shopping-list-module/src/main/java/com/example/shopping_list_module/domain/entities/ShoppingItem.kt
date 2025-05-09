@@ -4,7 +4,7 @@ data class ShoppingItem(
     val id: String,
     val name: String,
     val quantity: String,
-    val note: String,
-    val isBought: Boolean ,
-    val updatedAt: Long,
+    val note: String? = null,
+    val isBought: Boolean = false ,
+    val updatedAt: Long = System.currentTimeMillis(),
 )
