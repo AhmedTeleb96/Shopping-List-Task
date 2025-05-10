@@ -32,7 +32,7 @@ class ShoppingListRepositoryImpl(
     }
 
     override suspend fun syncWithRemote() {
-        val localItems = dao.getItems()
-        remoteApi.syncItems(localItems)
+        val remoteItems = remoteApi.getItems()
+        dao.insertItems(remoteItems)
     }
 }

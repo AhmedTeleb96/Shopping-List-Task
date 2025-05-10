@@ -16,6 +16,9 @@ interface ShoppingListDao
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertItem(item: ShoppingItemDto)
 
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun insertItems(items: List<ShoppingItemDto>)
+
     @Update
     suspend fun updateItem(item: ShoppingItemDto)
 

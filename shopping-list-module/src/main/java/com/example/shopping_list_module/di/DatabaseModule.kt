@@ -5,6 +5,7 @@ import com.example.shopping_list_module.data.dataSources.localDB.ShoppingDatabas
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
@@ -14,7 +15,7 @@ object DatabaseModule
 {
     @Provides
     @Singleton
-    fun provideDatabase(appContext: Context): ShoppingDatabase =
+    fun provideDatabase(@ApplicationContext appContext: Context): ShoppingDatabase =
         ShoppingDatabase.getInstance(appContext)
 
     @Provides

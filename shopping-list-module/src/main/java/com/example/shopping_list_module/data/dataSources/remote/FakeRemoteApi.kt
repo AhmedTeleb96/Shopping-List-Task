@@ -7,40 +7,40 @@ import java.util.UUID
 class FakeRemoteApi {
     private val remoteItems = mutableListOf(
         ShoppingItemDto(
-            id = UUID.randomUUID().toString(),
+            id = "1",
             name = "Apples",
             quantity = "4",
             note = "Green ones",
             isBought = false
         ),
         ShoppingItemDto(
-            id = UUID.randomUUID().toString(),
+            id = "2",
             name = "Milk",
             quantity = "2",
             note = "Low fat",
             isBought = true
         ),
         ShoppingItemDto(
-            id = UUID.randomUUID().toString(),
+            id = "3",
             name = "Bread",
             quantity = "1",
             isBought = false
         ),
         ShoppingItemDto(
-            id = UUID.randomUUID().toString(),
+            id = "4",
             name = "Oranges",
             quantity = "12",
             isBought = false
         ),
         ShoppingItemDto(
-            id = UUID.randomUUID().toString(),
+            id = "5",
             name = "Coffee",
             quantity = "14",
             note = "Mt7weg",
             isBought = true
         ),
         ShoppingItemDto(
-            id = UUID.randomUUID().toString(),
+            id = "6",
             name = "Chicken",
             quantity = "3",
             note = "Frozen",
