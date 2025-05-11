@@ -66,6 +66,7 @@ dependencies {
     implementation(libs.androidx.espresso.core)
     implementation(libs.androidx.hilt.common)
     testImplementation(libs.junit)
+    testImplementation(libs.junit.jupiter)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
@@ -93,4 +94,31 @@ dependencies {
     // retrofit
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
+
+    // for test
+    testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.turbine)
+    testImplementation(libs.mockk)
+    testImplementation(libs.androidx.core.testing)
+
+    // Compose UI & Testing
+    androidTestImplementation(libs.ui.test.junit4)
+    debugImplementation(libs.ui.test.manifest) // For UI test previews
+
+// Hilt (DI) Testing
+    androidTestImplementation(libs.hilt.android.testing)
+    kaptAndroidTest(libs.hilt.compiler.v248)
+    testImplementation(libs.hilt.android.testing)
+    kaptTest(libs.hilt.compiler)
+
+// AndroidX Test - Core + Rules + Runner
+    androidTestImplementation(libs.androidx.core)
+    androidTestImplementation("androidx.test:runner:1.5.2")
+    androidTestImplementation("androidx.test:rules:1.5.0")
+
+// JUnit
+//    androidTestImplementation("junit:junit:4.13.2")
+
+// Espresso (Optional - For hybrid tests)
+//    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 }

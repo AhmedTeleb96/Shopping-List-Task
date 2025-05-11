@@ -5,4 +5,5 @@ plugins {
 
     id("com.google.dagger.hilt.android") version "2.51.1" apply false
     id("org.jetbrains.kotlin.plugin.serialization") version "1.8.21"
+    alias(libs.plugins.android.library) apply false
 }

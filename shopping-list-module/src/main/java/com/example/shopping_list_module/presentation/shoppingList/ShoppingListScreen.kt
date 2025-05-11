@@ -28,7 +28,6 @@ import androidx.hilt.navigation.compose.hiltViewModel
 fun ShoppingListScreen(viewModel: ShoppingListViewModel = hiltViewModel()) {
     val filteredItems = viewModel.getFilteredSortedItems().collectAsState()
 
-    Log.i("zzz", "ShoppingListScreen: $filteredItems")
     var name by remember { mutableStateOf("") }
     var quantity by remember { mutableStateOf("") }
     var note by remember { mutableStateOf("") }

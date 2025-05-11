@@ -2,8 +2,9 @@ package com.example.shopping_list_module.domain.usecases
 
 import com.example.shopping_list_module.domain.entities.ShoppingItem
 import com.example.shopping_list_module.domain.repositories.ShoppingListRepository
+import javax.inject.Inject
 
-class AddShoppingItemUseCase(private val repository: ShoppingListRepository) {
+class AddShoppingItemUseCase @Inject constructor(private val repository: ShoppingListRepository) {
     suspend operator fun invoke(item: ShoppingItem) = repository.addItem(item)
 }
 
