@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.shoppinglisttask"
+    namespace = "com.example.shopping_list_module"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.shoppinglisttask"
+        applicationId = "com.example.shopping_list_module"
         minSdk = 24
         targetSdk = 35
         versionCode = 1
@@ -62,7 +62,11 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.androidx.work.runtime.ktx)
+    implementation(libs.androidx.espresso.core)
+    implementation(libs.androidx.hilt.common)
     testImplementation(libs.junit)
+    testImplementation(libs.junit.jupiter)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
@@ -70,30 +74,51 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
-    /*implementation(libs.androidx.navigation.compose)
+
+    implementation(libs.androidx.navigation.compose)
 
     // Room
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
     kapt(libs.androidx.room.compiler)
-
-    // dagger
-    implementation(libs.hilt.android)
-    kapt(libs.hilt.compiler)
-
-    // coroutine
-    implementation(libs.kotlinx.coroutines.android)
-
-    // retrofit
-    implementation(libs.retrofit)
-    implementation(libs.converter.gson)*/
+    implementation("org.jetbrains.kotlin:kotlin-metadata-jvm:2.1.10")
 
     // dagger
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
     implementation(libs.androidx.hilt.navigation.compose)
 
-    implementation(project(":shopping-list-module"))
+    // coroutine
+    implementation(libs.kotlinx.coroutines.android)
 
+    // retrofit
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
 
+    // for test
+    testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.turbine)
+    testImplementation(libs.mockk)
+    testImplementation(libs.androidx.core.testing)
+
+    // Compose UI & Testing
+    androidTestImplementation(libs.ui.test.junit4)
+    debugImplementation(libs.ui.test.manifest) // For UI test previews
+
+// Hilt (DI) Testing
+    androidTestImplementation(libs.hilt.android.testing)
+    kaptAndroidTest(libs.hilt.compiler.v248)
+    testImplementation(libs.hilt.android.testing)
+    kaptTest(libs.hilt.compiler)
+
+// AndroidX Test - Core + Rules + Runner
+    androidTestImplementation(libs.androidx.core)
+    androidTestImplementation("androidx.test:runner:1.5.2")
+    androidTestImplementation("androidx.test:rules:1.5.0")
+
+// JUnit
+//    androidTestImplementation("junit:junit:4.13.2")
+
+// Espresso (Optional - For hybrid tests)
+//    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 }
